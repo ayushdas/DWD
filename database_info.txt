@@ -1,0 +1,6 @@
+Use this information to connect to the server from your PHP code:
+    Server: localhost
+    Database: s1884908
+    Username: s1884908
+    Password: HSx3E7WhAH
+If you have problems connecting, please use the contact form: http://info.eca.ed.ac.uk/contactit

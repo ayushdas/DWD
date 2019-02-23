@@ -1,8 +1,6 @@
 function getFoodByCusine()
 {
 const app = document.getElementById('root');
-// const logo = document.createElement('img');
-// logo.src = 'logo.png';
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
 // app.appendChild(logo);
@@ -14,33 +12,21 @@ request.setRequestHeader("X-RapidAPI-Key", "208e6edba5mshc9fbd7dbf8b607cp113952j
 request.onload = function () {
   var data = JSON.parse(this.response);
   if (request.status >= 200 && request.status < 400) {
-    // array_of_ids = []
     data.results.forEach(item => {
-      // console.log(item.id);
-      // console.log(item.image);
-      // console.log(item.title)
       logo_src = data.baseUri+item.image;
       const card = document.createElement('div');
       card.setAttribute('class', 'card');
       const h1 = document.createElement('h1');
       h1.textContent = item.title;
-      // const p = document.createElement('p');
       const img = document.createElement('img');
       img.addEventListener("click",function(){
         func(item.id, item.title)
       }, false);
-      // deleteUnitButton.addEventListener('click', function() {
-      //   deleteUnit(rowIndex)
-      // }, false);
-      // array_of_ids.push(item.id);
-      // movie.description = movie.description.substring(0, 300);
       img.src = logo_src;
       container.appendChild(card);
       card.appendChild(h1);
-      // card.appendChild(p);
       card.appendChild(img);
     });
-    // console.log(array_of_ids);
   } else {
     console.log('error');
   }
@@ -142,22 +128,6 @@ function getRandomFood() {
         container.appendChild(card);
         card.appendChild(h1);
         card.appendChild(p);
-        // data.recipes.forEach(item => {
-        //   logo_src = item.image
-        //   console.log(logo_src)
-        //   const card = document.createElement('div');
-        //   card.setAttribute('class', 'card');
-        //   const h1 = document.createElement('h1');
-        //   h1.textContent = item.title;
-        //   const img = document.createElement('img');
-        //   img.addEventListener("click",function(){
-        //     func(item.id, item.title)
-        //   }, false);
-        //   img.src = logo_src;
-        //   container.appendChild(card);
-        //   card.appendChild(h1);
-        //   card.appendChild(img);
-        // });
       } else {
         console.log('error');
         } 
@@ -167,14 +137,10 @@ function getRandomFood() {
 
 function temp() {
   getRandomFood();
-  // getRandomFood();
-  // getRandomFood();
-  // getRandomFood();
   getFoodTrivia();
 }
 
 function func(id,title) {
-  // alert (id);
   var request = new XMLHttpRequest();
   URI = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/"+id+"/information";
   request.open('GET',URI,true,"ayush.das007@gmail.com");
@@ -206,7 +172,6 @@ function func(id,title) {
       console.log('error');
     }
   }
-  // modal.find('.modal-footer a.btn').text('Remove');
   $('#myModal').modal('show');
   request.send();
 }

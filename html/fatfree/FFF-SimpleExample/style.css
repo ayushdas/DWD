@@ -42,6 +42,9 @@ img {
   color:dimgrey;
   font-family:verdana;
 }
+.modal-body p{
+  color: black;
+}
 .container {
   display: inline-block;
   flex-wrap: wrap;
